@@ -16,7 +16,6 @@
     <description>miscellaneous</description>
     <properties>
         <java.version>17</java.version>
-        <dependency-check.api.key>22345f6f-bf13-4aa5-b13b-fb958ae8a3d1</dependency-check.api.key>
     </properties>
     <dependencies>
         <dependency>
@@ -69,16 +68,6 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>10.0.4</version>
-                <configuration>
-                    <failBuildOnCVSS>7</failBuildOnCVSS> <!-- Customize as needed -->
-                    <dataDirectory>${project.build.directory}/dependency-check-data</dataDirectory>
-                    <nvdApiKey>${dependency-check.api.key}</nvdApiKey> <!-- Reference your API key here -->
                 </configuration>
             </plugin>
         </plugins>
