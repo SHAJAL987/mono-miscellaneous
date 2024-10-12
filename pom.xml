@@ -10,13 +10,12 @@
     </parent>
     <groupId>com.mono</groupId>
     <artifactId>miscellaneous</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <packaging>war</packaging>
     <name>miscellaneous</name>
     <description>miscellaneous</description>
     <properties>
         <java.version>17</java.version>
-        <version>1.0.4</version>
     </properties>
     <dependencies>
         <dependency>
