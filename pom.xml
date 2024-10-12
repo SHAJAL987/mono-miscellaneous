@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.mono</groupId>
     <artifactId>miscellaneous</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>war</packaging>
     <name>miscellaneous</name>
     <description>miscellaneous</description>
@@ -52,6 +52,12 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version> <!-- Use the appropriate version -->
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
         </dependency>
 
     </dependencies>
