@@ -54,19 +54,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-            <version>3.2.1</version>
-            <scope>compile</scope>  <!-- Ensure it's in compile scope -->
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.8.1</version>  <!-- Known vulnerability CVE-2017-5645 -->
-        </dependency>
-
-
     </dependencies>
 
     <build>
