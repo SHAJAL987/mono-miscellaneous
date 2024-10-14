@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.mono</groupId>
     <artifactId>miscellaneous</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <packaging>war</packaging>
     <name>miscellaneous</name>
     <description>miscellaneous</description>

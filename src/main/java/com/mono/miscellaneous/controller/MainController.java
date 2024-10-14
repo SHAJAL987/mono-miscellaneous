@@ -1,5 +1,6 @@
 package com.mono.miscellaneous.controller;
 
+import com.mono.miscellaneous.common.controllers.BaseMiscellaneousController;
 import com.mono.miscellaneous.common.utilities.CommonEnum;
 import com.mono.miscellaneous.payload.ErrorObject;
 import com.mono.miscellaneous.payload.IpLookupRequest;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/miscellaneous/v1")
-public class MainController extends BaseMiscellaneousController{
+public class MainController extends BaseMiscellaneousController {
     private RapidApiService rapidApiService;
 
     public MainController(RapidApiService rapidApiService) {
@@ -37,11 +38,11 @@ public class MainController extends BaseMiscellaneousController{
         logRequest(reqObj);
         ResponseEntity response;
         try{
-            RealtimeWeatherResponse objResponse = rapidApiService.getRealTimeWeather(lat, lon, serviceID);
+            RealtimeWeatherResponse objResponse = rapidApiService.getRealTimeWeather(lat, lon, getServiceID());
             if (objResponse != null){
                 response = ResponseEntity.ok(objResponse);
             }else {
-                response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorObject(serviceID, CommonEnum.ResponseCode.NOT_FOUND.getCode(), CommonEnum.ResponseCode.NOT_FOUND.getMessage(),timeStamp));
+                response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorObject(getServiceID(), CommonEnum.ResponseCode.NOT_FOUND.getCode(), CommonEnum.ResponseCode.NOT_FOUND.getMessage(),getTimeStamp()));
             }
             logResponse(response.getBody());
             return response;
@@ -65,11 +66,11 @@ public class MainController extends BaseMiscellaneousController{
         logRequest(reqObj);
         ResponseEntity response;
         try{
-            IpLookupResponse objResponse = rapidApiService.getIplookup(ipLookupRequest,apiKey,apiHost,serviceID);
+            IpLookupResponse objResponse = rapidApiService.getIplookup(ipLookupRequest,apiKey,apiHost,getServiceID());
             if (objResponse != null){
                 response = ResponseEntity.ok(objResponse);
             }else {
-                response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorObject(serviceID, CommonEnum.ResponseCode.NOT_FOUND.getCode(), CommonEnum.ResponseCode.NOT_FOUND.getMessage(),timeStamp));
+                response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorObject(getServiceID(), CommonEnum.ResponseCode.NOT_FOUND.getCode(), CommonEnum.ResponseCode.NOT_FOUND.getMessage(),getTimeStamp()));
             }
             logResponse(response.getBody());
             return response;
